@@ -1,0 +1,104 @@
+EASY QUESTIONS
+======================
+Two_Sum: 
+  You need to get the complement of the target - the current index.
+  need to check if the complement is in the new dict/array if so then return the proper indexs
+  otherwise just add the number to the new dict/array
+
+Valid_Palindrome:
+  need to get rid of all the delimiters in the string and make it all lowercase 
+  then check if it is the the same 
+
+Valid_Parenthesis:
+  Here you need to use a stack and the way to initialize it would be
+    stack = []
+  then you have a dictionary of the parenthesis 
+    you need to have them that the closing bracket will give you the opening one 
+  then iterate through the string 
+    if the character is in the dictionary 
+      then pop the top element of the stack and see if it is the right one 
+        if not return false 
+    otherwise just add it to the stack 
+
+Missing Number:
+  Need to get the total of all the numbers from 0->n
+  need to get the total of the array 
+  then find the difference 
+
+Best time to buy and sell stocks:
+  need to find the min in the array 
+  initialize 2 variables min and max 
+    min should be set to very large since it will look for a smaller nunmber then 
+  go through and check to get the new min, get the profit at that point and then see if the profit is greater than before 
+
+Linked List Cycle
+  need to have two pointers one fast and one slow. 
+  they need to both be initalized to the head of the list 
+  the fast one goes by two every time
+    so it would be fast = fast.next.next
+  slow just moves by one 
+  if they are the same at any point then you have a cycle
+
+Number of 1-Bits
+  get the number in binary in a string 
+  then count how many 1 bits there are but start from the 2nd index because in python binary starts with 0B
+
+Contains Duplicate
+  this one you just need to check the length and see if it equals the length of the set 
+  if it does then there are no duplicates 
+  you can also use a hashmap really easily 
+
+Valid Anagrams
+  need to check if the lengths are the same 
+  need to then create a dictionary of the letters and counts for each string 
+   to get the frequency it would be something like "char_count[char] = char_count.get(char, 0) + 1"
+  then see if they are the same 
+
+Merge 2 Sorted Lists
+  need to create 2 new ListNodes. one is going to be current and the other one is a temp
+  need to iterate through both the lists and check the values. set the curr.next to the lower value 
+  also have a check to see if one of the lists are done and the other isnt then add the rest of that list 
+  return the temp node 
+
+Reverse a Linked List
+  need to set a prev, curr. the Prev is set to none and the curr is set to the head 
+  then have a loop that while there is a curr
+    you have another node that takes in the current head to save it 
+    then set the curr.next to prev so it doesnt point to anything anymore 
+    then set the previous to what the current is so that it will take it and add it to the beginning of the new list 
+    then the curr = the next node since that is everything except the node we jsut took out 
+  return the prev list 
+
+Invert a Binary Tree
+  use recursion for this, the base case would be if the root is none 
+  then get the left half and the right half 
+  then just swap them 
+  then return the root 
+
+Subtree of another subtree
+  need to check if root exists 
+  have a helper function that takes in a child of the root and the subroot 
+    check if the values are the same 
+    check if they are both not there 
+    if one is and the other isnt then it is false 
+
+Maximum depth of a binary tree:
+  if there is no root then it would be 0 
+  otherwise take the max of both sides of hte tree and add one 
+
+
+Same Tree
+  checks if both roots are none 
+  checks if only one of the roots are none
+  checks the values of the roots 
+  then recursivley calls on both sides of hte tree 
+
+Counting Bits
+  need to create an array of the size of n+1
+  then you just need to set the index to the count of how many 1 is in the binary 
+  return the array
+
+Reverse Bits
+  honestly no idea how this works 
+
+
