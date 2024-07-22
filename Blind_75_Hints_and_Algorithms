@@ -99,6 +99,17 @@ Counting Bits
   return the array
 
 Reverse Bits
-  honestly no idea how this works 
+  you can get this as a string and then reverse it that way 
+==================================================================================================================================
+MEDIUM PROBLEMS 
+=================
+Longest Substring Without Repeating Characters
+  set a dict for all the characters 
+  initialize the values of max and start to 0 
+  iterate through the string 
+    if the character is already in the dict and it is at a place greater than start the move start to the next one 
+    update the dict with the current char 
+  then find the max value of the max and where you are currently
 
+  
 
