@@ -132,3 +132,42 @@ def parse_data(info):
 
 print(parse_data(info))
 
+#============================================================================= 
+""" The problem was to take in either a string or a tree and convert it to the opposite 
+so taking in a string would create a tree and vice versa. But to make the tree should be done in a binary way """
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def buildTree(s: str) -> TreeNode:
+    if not s:
+        return None
+
+    mid = len(s) // 2
+    root = TreeNode(s[mid])
+    root.left = buildTree(s[:mid])
+    root.right = buildTree(s[mid + 1:])
+    
+    return root
+
+def treeToString(root: TreeNode) -> str:
+    if not root:
+        return ""
+    
+    return treeToString(root.left) + root.val + treeToString(root.right)
+
+def printInOrder(root):
+    if root:
+        printInOrder(root.left)
+        print(root.val, end=' ')
+        printInOrder(root.right)
+# Example usage
+s = "puzzle"
+tree = buildTree(s)
+printInOrder(tree)
+result = treeToString(tree)
+print(result)  # Output should be "abcdefg"
+#============================================================================= 
